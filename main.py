@@ -58,8 +58,9 @@ def titanicdata(csv_file, test = False):
 
     return dataset
 
-
-dataset = titanicdata('train.csv')
+from os import path as op
+csv_dir = op.join(op.dirname(__file__), u'all_csv_files')
+dataset = pd.read_csv(op.join(csv_dir, 'train.csv'))
 
 
 print(dataset.describe())
